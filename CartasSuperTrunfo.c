@@ -1,77 +1,103 @@
-#include <stdio.h> 
+#include <stdio.h>
     int main(){
         char estado[30], estado2[30];
         char codigo[10], codigo2[10];
-        char ncidade[50], ncidade2[50];
-        int popu, popu2;
-        int pontos, pontos2;
+        char nome_cidade[50], nome_cidade2[50];
+        unsigned long int populacao = 1000000000;
+        unsigned long int populacao2 = 1000000000;
+        unsigned long int pib = 1000000000;
+        unsigned long int pib2 = 1000000000;
+        int pontos_turisticos, pontos_turisticos2;
         float area, area2;
-        float de, de2;
-        float pib, pib2, pibp, pibp2;
-
+        double pib_per_capita, pib_per_capita2;
+        double densidade_populacional, densidade_populacional2;
+        double densidade_populacionall, densidade_populacionall2;
+        double super_poder, super_poder2;
+        
 printf("Primeiro defina o Estado da sua carta (Uma letra de A a Z):\n", estado);
 scanf("%s", &estado);
 
 printf("Escolha um Código para a sua carta (Ex: A01):\n", codigo);
 scanf("%s", &codigo);
 
-printf("Agora, o nome da sua cidade (Ex: RioDeJaneiro):\n", ncidade);
-scanf("%s", &ncidade);
+printf("Agora, o nome da sua cidade (Ex: RioDeJaneiro):\n", nome_cidade);
+scanf("%s", &nome_cidade);
 
-printf("Escreva o total de habitantes/população do seu estado (Ex: 6.729.684 habitantes):\n", popu);
-scanf("%d", &popu);
+printf("Escreva o total de habitantes/população do seu estado (Ex: 6.729.684 habitantes):\n", populacao);
+scanf("%lu", &populacao);
 
-printf("Escreva o total de pontos turísticos do seu estado:\n", pontos);
-scanf("%d", &pontos);
+printf("Escreva o total de pontos turísticos do seu estado:\n", pontos_turisticos);
+scanf("%d", &pontos_turisticos);
 
-printf("Escreva o área em (km^2) do seu estado:\n", area);
+printf("Escreva a área em (km^2) do seu estado:\n", area);
 scanf("%f", &area);
 
 printf("Por último,escreva o PIB (em reais) do seu estado:\n", pib);
-scanf("%f", &pib);
+scanf("%lu", &pib);
 
-printf("Digite a densidade populacional (em hab/km^2) do seu estado:\n", de);
-scanf("%f", &de);
+densidade_populacional = populacao / area;
 
-printf("Digite o PIB per capita (em reais da sua cidade:\n", pibp);
-scanf("%f", &pibp);
+pib_per_capita = (double)pib / populacao;
 
-printf("Estado: %s\n - Código: %s\n - Cidade: %s\n", estado, codigo, ncidade);
-printf("População: %d habitantes\n - Quantidade de pontos turísticos: %d\n - Área: %.2f km^2\n - PIB: %.2f reais\n", popu, pontos, area, pib);
-printf("Densidade demográfica: %.2f hab/km^2\n - PIB per capita: %.2f reais\n", de, pibp);
+densidade_populacionall = 1 / densidade_populacional;
 
-printf("Vamos cadastrar a sua segunda carta\n");
+super_poder = populacao + area + pontos_turisticos + pib + pib_per_capita + densidade_populacionall;
 
-printf("Defina o Estado da sua carta (Uma letra de A a Z):\n", estado2);
+printf("-Estado: %s\n - Código: %s\n - Cidade: %s\n - Quantidade de pontos turísticos: %d\n", estado, codigo, nome_cidade, pontos_turisticos);
+
+printf("- O PIB per capita do seu estado é: %.1f reais\n", pib_per_capita);
+
+printf("- A densidade populacional do seu estado é: %.1f hab/km^2\n", densidade_populacionall);
+
+printf("- O super poder da sua carta é: %.1f\n", super_poder);
+
+printf("Agora vamos definir a sua segunda carta:\n");
+
+printf("Primeiro defina o Estado da sua carta (Uma letra de A a Z):\n", estado2);
 scanf("%s", &estado2);
 
 printf("Escolha um Código para a sua carta (Ex: A01):\n", codigo2);
 scanf("%s", &codigo2);
 
-printf("Agora, o nome da sua cidade (Ex: RioDeJaneiro):\n", ncidade2);
-scanf("%s", &ncidade2);
+printf("Agora, o nome da sua cidade (Ex: RioDeJaneiro):\n", nome_cidade2);
+scanf("%s", &nome_cidade2);
 
-printf("Escreva o total de habitantes/população do seu estado (Ex: 6.729.684 habitantes):\n", popu2);
-scanf("%d", &popu2);
+printf("Escreva o total de habitantes/população do seu estado (Ex: 6.729.684 habitantes):\n", populacao2);
+scanf("%lu", &populacao2);
 
-printf("Escreva o total de pontos turísticos do seu estado:\n", pontos2);
-scanf("%d", &pontos2);
+printf("Escreva o total de pontos turísticos do seu estado:\n", pontos_turisticos2);
+scanf("%d", &pontos_turisticos2);
 
-printf("Escreva o área (em km^2) do seu estado:\n", area2);
+printf("Escreva a área em (km^2) do seu estado:\n", area2);
 scanf("%f", &area2);
 
 printf("Por último,escreva o PIB (em reais) do seu estado:\n", pib2);
-scanf("%f", &pib2);
+scanf("%lu", &pib2);
 
-printf("Digite a densidade populacional (em hab/km^2) do seu estado:\n", de);
-scanf("%f", &de2);
+densidade_populacional2 = populacao2 / area2;
 
-printf("Digite o PIB per capita (em reais) da sua cidade:\n", pibp);
-scanf("%f", &pibp2);
+pib_per_capita2 = (double)pib2 / populacao2;
 
-printf("Estado: %s\n - Código: %s\n - Cidade: %s\n", estado2, codigo2, ncidade2);
-printf("População: %d habitantes\n - Quantidade de pontos turísticos: %d\n - Área: %.2f km^2\n - PIB: %.2f reais\n", popu2, pontos2, area2, pib2);
-printf("Densidade demográfica: %.2f hab/km^2\n - PIB per capita: %.2f reais\n", de2, pibp2);
+densidade_populacionall2 = 1 / densidade_populacional2;
 
-return 0;
+super_poder2 = populacao2 + area2 + pontos_turisticos2 + pib2 + pib_per_capita2 + densidade_populacionall2;
+
+printf("-Estado: %s\n - Código: %s\n - Cidade: %s\n - Quantidade de pontos turísticos: %d\n", estado2, codigo2, nome_cidade2, pontos_turisticos2);
+
+printf("- O PIB per capita do seu estado é: %.1f reais\n", pib_per_capita2);
+
+printf("- A densidade populacional do seu estado é: %.1f hab/km^2\n", densidade_populacionall2);
+
+printf("- O super poder da sua carta é: %.1f\n\n", super_poder2);
+
+printf("Agora o resultado das suas cartas (0 - a carta 1 não venceu | 1 - a carta 1 venceu):\n\n");
+printf("- População da carta 1 venceu! %ld\n", populacao > populacao2);
+printf("- Área da carta 1 é maior! %.0f\n", area > area2);
+printf("- PIB da carta 1 é maior! %ld\n", pib > pib2);
+printf("- A carta 1 possui mais pontos turísticos! %d\n", pontos_turisticos > pontos_turisticos2);
+printf("- A densidade populacional da carta 1 é maior! %.0f\n", densidade_populacionall < densidade_populacionall2);
+printf("- O PIB per capita da carta 1 é maior! %.0f\n", pib_per_capita > pib_per_capita2);
+printf("- A carta 1 venceu! %ld\n", super_poder > super_poder2);
+
+return 0;        
 }
